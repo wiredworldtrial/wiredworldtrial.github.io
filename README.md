@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
   <title>Login Page</title>
@@ -48,7 +47,7 @@
   <h1 id="welcome-msg"></h1>
 
   <video id="video" autoplay loop muted>
-    <source src="[https://www.dropbox.com/s/snsqjy444rn22e2/Static%20No%20Sound.mp4?dl=1" type="video/mp4](https://drive.google.com/file/d/1JfG_YqyuCUf4yw0xBaeAv4LaFZostlfc/view?usp=sharing)">
+    <source src="https://drive.google.com/file/d/1JfG_YqyuCUf4yw0xBaeAv4LaFZostlfc/preview" type="video/mp4">
   </video>
 
   <script>
@@ -66,10 +65,7 @@
 
       // Start the video playback
       var video = document.getElementById('video');
-      video.src = "https://www.dropbox.com/s/snsqjy444rn22e2/Static%20No%20Sound.mp4?dl=1";
-      video.requestFullscreen().then(function () {
-        video.play();
-      });
+      video.play();
 
       // Start the audio playback
       var audio = new Audio("https://www.dropbox.com/s/wjct0w8fp260qvr/Apollo%20pads%20loop.mp3?dl=1");
