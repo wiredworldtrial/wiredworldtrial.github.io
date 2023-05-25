@@ -8,6 +8,8 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
+      padding: 0;
     }
     
     #login-form {
@@ -17,6 +19,10 @@
       border-radius: 5px;
       backdrop-filter: blur(10px);
       text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     
     h1 {
@@ -41,12 +47,14 @@
     #player {
       display: none;
       width: 300px;
+      padding: 20px;
       background-color: rgba(255, 255, 255, 0.5);
       border-radius: 5px;
-      padding: 20px;
-      position: fixed;
-      top: 20px;
-      right: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
     }
     
     #player img {
@@ -79,7 +87,7 @@
     <img src="https://www.dropbox.com/s/snreyzwgowu31h9/Flame%206.png?dl=1" alt="Background Image">
     <audio id="audio" src="https://www.dropbox.com/s/bkm5nybdnk688ay/My%20Nostalgia%20Mixtape%2001.mp3?dl=1" loop></audio>
     <button onclick="previous()">Previous</button>
-    <button onclick="playPause()">Play/Pause</button>
+    <button onclick="playPause()" id="play-pause-button">Play</button>
     <input type="range" id="volume" min="0" max="100" step="1" oninput="setVolume(this.value)">
     <button onclick="next()">Next</button>
   </div>
@@ -96,11 +104,11 @@
       document.body.style.backgroundImage = 'url("https://www.dropbox.com/s/mhimmxmq1kgvroj/Flame%202.png?dl=1")';
     }
 
-    function playPause() {
-      var audio = document.getElementById('audio');
-      var playPauseButton = document.getElementById('play-pause-button');
+    var audio = document.getElementById('audio');
+    var playPauseButton = document.getElementById('play-pause-button');
 
-      if (audio.paused) {
+    function playPause() {
+      if (audio.paused || audio.ended) {
         audio.play();
         playPauseButton.textContent = 'Pause';
       } else {
@@ -110,19 +118,16 @@
     }
 
     function setVolume(volumeValue) {
-      var audio = document.getElementById('audio');
       audio.volume = volumeValue / 100;
     }
 
     function previous() {
-      var audio = document.getElementById('audio');
       audio.src = "https://www.dropbox.com/s/bkm5nybdnk688ay/My%20Nostalgia%20Mixtape%2001.mp3?dl=1";
       audio.play();
       document.body.style.backgroundImage = 'url("https://www.dropbox.com/s/mhimmxmq1kgvroj/Flame%202.png?dl=1")';
     }
 
     function next() {
-      var audio = document.getElementById('audio');
       audio.src = "https://www.dropbox.com/s/3po6idbwdie8624/Live%20%40Starry%20Shelter%20ft.%20Mr.%20Ye.mp3?dl=1";
       audio.play();
       document.body.style.backgroundImage = 'url("https://www.dropbox.com/s/snreyzwgowu31h9/Flame%206.png?dl=1")';
