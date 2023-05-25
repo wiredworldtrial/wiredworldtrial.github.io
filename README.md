@@ -15,16 +15,19 @@
       padding: 20px;
       background-color: rgba(255, 255, 255, 0.5);
       border-radius: 5px;
-    }
-    
-    h1 {
-      font-family: Times New Roman, serif;
-      font-style: italic;
-      color: white;
+      backdrop-filter: blur(10px);
       text-align: center;
     }
     
-    #video-bg {
+    h1 {
+      font-family: "Times New Roman", serif;
+      font-style: italic;
+      color: white;
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    #login-bg {
       position: fixed;
       top: 0;
       left: 0;
@@ -32,46 +35,72 @@
       height: 100%;
       z-index: -1;
       object-fit: cover;
+      filter: blur(20px);
+    }
+    
+    #player {
+      display: none;
+      width: 300px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
+      padding: 20px;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+    }
+    
+    #player img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    #player audio {
+      width: 100%;
+    }
+    
+    #player button {
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
+  <h1>Wired Sound for Wired People</h1>
+
   <div id="login-form">
     <form>
-      <input type="text" id="username" value="your_username">
+      <input type="text" id="username" value="User 0001">
       <input type="password" id="password" value="your_password">
       <button type="button" onclick="login()">Login</button>
     </form>
   </div>
 
-  <h1 id="welcome-msg"></h1>
-
-  <video id="video" autoplay loop muted>
-    <source src="https://drive.google.com/file/d/1JfG_YqyuCUf4yw0xBaeAv4LaFZostlfc/preview" type="video/mp4">
-  </video>
+  <div id="player">
+    <img src="https://drive.google.com/uc?id=1wy1ql0k8AtOmy1BnGDZfzS3WgYw3lZUD" alt="Background Image">
+    <audio id="audio" src="https://on.soundcloud.com/h8Z9r" loop></audio>
+    <button onclick="previous()">Previous</button>
+    <button onclick="playPause()">Play/Pause</button>
+    <input type="range" id="volume" min="0" max="100" step="1" oninput="setVolume(this.value)">
+    <button onclick="next()">Next</button>
+  </div>
 
   <script>
     function login() {
       // Hide the login form
       document.getElementById('login-form').style.display = 'none';
-      
-      // Show the welcome message
-      document.getElementById('welcome-msg').textContent = 'Welcome to Wired World.';
-      
-      // Set the font style for the welcome message
-      document.getElementById('welcome-msg').style.fontFamily = 'Times New Roman, serif';
-      document.getElementById('welcome-msg').style.fontStyle = 'italic';
-      document.getElementById('welcome-msg').style.color = 'white';
 
-      // Start the video playback
-      var video = document.getElementById('video');
-      video.play();
+      // Show the player
+      document.getElementById('player').style.display = 'block';
 
-      // Start the audio playback
-      var audio = new Audio("https://www.dropbox.com/s/wjct0w8fp260qvr/Apollo%20pads%20loop.mp3?dl=1");
-      audio.loop = true;
-      audio.play();
+      // Change the body background image
+      document.body.style.backgroundImage = 'url("https://drive.google.com/uc?id=1wy1ql0k8AtOmy1BnGDZfzS3WgYw3lZUD")';
     }
-  </script>
-</body>
-</html>
+
+    function playPause() {
+      var audio = document.getElementById('audio');
+      var playPauseButton = document.getElementById('play-pause-button');
+
+      if (audio.paused) {
+        audio.play();
+        playPauseButton.textContent = 'Pause';
+      } else
