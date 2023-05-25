@@ -77,7 +77,7 @@
 
   <div id="player">
     <img src="https://www.dropbox.com/s/snreyzwgowu31h9/Flame%206.png?dl=1" alt="Background Image">
-    <audio id="audio" src="https://on.soundcloud.com/h8Z9r" loop></audio>
+    <audio id="audio" src="https://www.dropbox.com/s/bkm5nybdnk688ay/My%20Nostalgia%20Mixtape%2001.mp3?dl=1" loop></audio>
     <button onclick="previous()">Previous</button>
     <button onclick="playPause()">Play/Pause</button>
     <input type="range" id="volume" min="0" max="100" step="1" oninput="setVolume(this.value)">
@@ -116,14 +116,14 @@
 
     function previous() {
       var audio = document.getElementById('audio');
-      audio.src = "https://on.soundcloud.com/h8Z9r";
+      audio.src = "https://www.dropbox.com/s/bkm5nybdnk688ay/My%20Nostalgia%20Mixtape%2001.mp3?dl=1";
       audio.play();
       document.body.style.backgroundImage = 'url("https://www.dropbox.com/s/mhimmxmq1kgvroj/Flame%202.png?dl=1")';
     }
 
     function next() {
       var audio = document.getElementById('audio');
-      audio.src = "https://on.soundcloud.com/WUwfc";
+      audio.src = "https://www.dropbox.com/s/3po6idbwdie8624/Live%20%40Starry%20Shelter%20ft.%20Mr.%20Ye.mp3?dl=1";
       audio.play();
       document.body.style.backgroundImage = 'url("https://www.dropbox.com/s/snreyzwgowu31h9/Flame%206.png?dl=1")';
     }
