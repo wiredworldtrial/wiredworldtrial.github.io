@@ -1,5 +1,4 @@
-<html>
-<head>
+<html><head>
   <title>Login Page</title>
   <style>
     body {
@@ -10,13 +9,6 @@
       height: 100vh;
       margin: 0;
       padding: 0;
-    }
-    
-    .top-center {
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
     }
     
     #login-form {
@@ -77,13 +69,20 @@
     #player button {
       margin-top: 10px;
     }
+
+    .top-center {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
   </style>
 </head>
 <body>
-  <div class="top-center">
-    <h1>Wired Sound for Wired People</h1>
-  </div>
-
+    <div class="top-center">
+        <h1>Wired Sound for Wired People</h1>
+    </div>
   <div id="login-form">
     <form>
       <input type="text" id="username" value="User 0001">
@@ -94,7 +93,7 @@
 
   <div id="player">
     <img src="https://www.dropbox.com/s/snreyzwgowu31h9/Flame%206.png?dl=1" alt="Background Image">
-    <audio id="audio" src="https://www.dropbox.com/s/bkm5nybdnk688ay/My%20Nostalgia%20Mixtape%2001.mp3?dl=1" loop></audio>
+    <audio id="audio" src="https://www.dropbox.com/s/bkm5nybdnk688ay/My%20Nostalgia%20Mixtape%2001.mp3?dl=1" loop=""></audio>
     <button onclick="previous()">Previous</button>
     <button onclick="playPause()" id="play-pause-button">Play</button>
     <input type="range" id="volume" min="0" max="100" step="1" oninput="setVolume(this.value)">
@@ -109,7 +108,7 @@
       // Show the player
       document.getElementById('player').style.display = 'block';
 
-      // Set the background image
+      // Change the body background image
       document.body.style.backgroundImage = 'url("https://www.dropbox.com/s/mhimmxmq1kgvroj/Flame%202.png?dl=1")';
     }
 
@@ -142,5 +141,6 @@
       document.body.style.backgroundImage = 'url("https://www.dropbox.com/s/snreyzwgowu31h9/Flame%206.png?dl=1")';
     }
   </script>
-</body>
-</html>
+
+
+</body></html>
