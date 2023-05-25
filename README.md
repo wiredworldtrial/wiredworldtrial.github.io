@@ -1,4 +1,5 @@
-<html><head>
+<html>
+<head>
   <title>Login Page</title>
   <style>
     body {
@@ -93,7 +94,7 @@
 
   <div id="player">
     <img src="https://www.dropbox.com/s/snreyzwgowu31h9/Flame%206.png?dl=1" alt="Background Image">
-    <audio id="audio" src="https://www.dropbox.com/s/bkm5nybdnk688ay/My%20Nostalgia%20Mixtape%2001.mp3?dl=1" loop=""></audio>
+    <audio id="audio" src="https://www.dropbox.com/s/bkm5nybdnk688ay/My%20Nostalgia%20Mixtape%2001.mp3?dl=1" loop></audio>
     <button onclick="previous()">Previous</button>
     <button onclick="playPause()" id="play-pause-button">Play</button>
     <input type="range" id="volume" min="0" max="100" step="1" oninput="setVolume(this.value)">
@@ -141,6 +142,5 @@
       document.body.style.backgroundImage = 'url("https://www.dropbox.com/s/snreyzwgowu31h9/Flame%206.png?dl=1")';
     }
   </script>
-
-
-</body></html>
+</body>
+</html>
