@@ -2,6 +2,17 @@
 <head>
   <title>Login Page</title>
   <style>
+    top-center {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+tambahi kui
+ngko nggon head (h1) diwenehi div class
+<div class="top-center">
+(h1 text)
+</div>
     body {
       background-color: black;
       display: flex;
