@@ -2,17 +2,6 @@
 <head>
   <title>Login Page</title>
   <style>
-    top-center {
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-tambahi kui
-ngko nggon head (h1) diwenehi div class
-<div class="top-center">
-(h1 text)
-</div>
     body {
       background-color: black;
       display: flex;
@@ -21,6 +10,13 @@ ngko nggon head (h1) diwenehi div class
       height: 100vh;
       margin: 0;
       padding: 0;
+    }
+    
+    .top-center {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     
     #login-form {
@@ -84,7 +80,9 @@ ngko nggon head (h1) diwenehi div class
   </style>
 </head>
 <body>
-  <h1>Wired Sound for Wired People</h1>
+  <div class="top-center">
+    <h1>Wired Sound for Wired People</h1>
+  </div>
 
   <div id="login-form">
     <form>
@@ -111,7 +109,7 @@ ngko nggon head (h1) diwenehi div class
       // Show the player
       document.getElementById('player').style.display = 'block';
 
-      // Change the body background image
+      // Set the background image
       document.body.style.backgroundImage = 'url("https://www.dropbox.com/s/mhimmxmq1kgvroj/Flame%202.png?dl=1")';
     }
 
