@@ -76,7 +76,7 @@
   </div>
 
   <div id="player">
-    <img src="https://drive.google.com/uc?id=1wy1ql0k8AtOmy1BnGDZfzS3WgYw3lZUD" alt="Background Image">
+    <img src="https://www.dropbox.com/s/snreyzwgowu31h9/Flame%206.png?dl=1" alt="Background Image">
     <audio id="audio" src="https://on.soundcloud.com/h8Z9r" loop></audio>
     <button onclick="previous()">Previous</button>
     <button onclick="playPause()">Play/Pause</button>
@@ -93,7 +93,7 @@
       document.getElementById('player').style.display = 'block';
 
       // Change the body background image
-      document.body.style.backgroundImage = 'url("https://drive.google.com/uc?id=1wy1ql0k8AtOmy1BnGDZfzS3WgYw3lZUD")';
+      document.body.style.backgroundImage = 'url("https://www.dropbox.com/s/mhimmxmq1kgvroj/Flame%202.png?dl=1")';
     }
 
     function playPause() {
@@ -103,4 +103,30 @@
       if (audio.paused) {
         audio.play();
         playPauseButton.textContent = 'Pause';
-      } else
+      } else {
+        audio.pause();
+        playPauseButton.textContent = 'Play';
+      }
+    }
+
+    function setVolume(volumeValue) {
+      var audio = document.getElementById('audio');
+      audio.volume = volumeValue / 100;
+    }
+
+    function previous() {
+      var audio = document.getElementById('audio');
+      audio.src = "https://on.soundcloud.com/h8Z9r";
+      audio.play();
+      document.body.style.backgroundImage = 'url("https://www.dropbox.com/s/mhimmxmq1kgvroj/Flame%202.png?dl=1")';
+    }
+
+    function next() {
+      var audio = document.getElementById('audio');
+      audio.src = "https://on.soundcloud.com/WUwfc";
+      audio.play();
+      document.body.style.backgroundImage = 'url("https://www.dropbox.com/s/snreyzwgowu31h9/Flame%206.png?dl=1")';
+    }
+  </script>
+</body>
+</html>
